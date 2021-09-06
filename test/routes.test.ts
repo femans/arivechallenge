@@ -16,7 +16,7 @@ describe('GET /user/all', () => {
         const users = [{name: 'Steve'}, {name: 'Bill'}];
         const skip = function() {return users;}
         const limit = function() {return this;}
-        const sort = function() {console.log("sort", this);return this;}
+        const sort = function() {return this;}
 
         // noinspection TypeScriptValidateTypes
         UserModel.find = function() {return {sort, limit, skip}}
